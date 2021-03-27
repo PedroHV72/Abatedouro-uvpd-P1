@@ -17,7 +17,7 @@ class Endereco(models.Model):
         return f"{self.rua} / {self.cidade} / {self.estado} / {self.numero}"
 
 
-class Funcionario(Endereco):
+class Funcionario(models.Model):
     OPCOES = (
         ('Motorista', 'Motorista'),
         ('Estoquista', 'Estoquista'),
@@ -27,7 +27,8 @@ class Funcionario(Endereco):
     cpf = models.CharField('CPF', max_length=11)
     telefone = models.CharField('Telefone', max_length=11, help_text='DD NNNNN-NNNN')
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
-    salario = models.CharField('Salário', max_length=10)
+    salario = models.DecimalField('Salário', max_digits=10, decimal_places=2)
+    endereco = models.ForeignKey(Endereco, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = 'Funcionario'
@@ -74,7 +75,7 @@ class Revendedora(Endereco):
 
 
 class Frete(Endereco):
-    valor = models.CharField('Valor', max_length=7)
+    valor = models.DecimalField('Valor', max_digits=7, decimal_places=2)
     codigo = models.CharField('Código', max_length=20)
 
     class Meta:
