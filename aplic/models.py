@@ -17,7 +17,7 @@ class Endereco(models.Model):
         return f"{self.rua} / {self.cidade} / {self.estado} / {self.numero}"
 
 
-class Funcionario(Endereco):
+class Funcionario(models.Model):
     OPCOES = (
         ('Motorista', 'Motorista'),
         ('Estoquista', 'Estoquista'),
@@ -27,7 +27,7 @@ class Funcionario(Endereco):
     cpf = models.CharField('CPF', max_length=11)
     telefone = models.CharField('Telefone', max_length=11, help_text='DD NNNNN-NNNN')
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
-    salario = models.CharField('Salário', max_length=10)
+    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Funcionario'
@@ -37,33 +37,40 @@ class Funcionario(Endereco):
         return self.nome
 
 
-class Motorista(Funcionario):
+class Motorista(models.Model):
     cnh = models.CharField('CNH', max_length=11)
+    salario = models.CharField('Salário', max_length=10)
+    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Motorista'
         verbose_name_plural = 'Motoristas'
 
 
-class Gerente(Funcionario):
+class Gerente(models.Model):
     codigo = models.CharField('Código', max_length=20)
+    salario = models.CharField('Salário', max_length=10)
+    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Gerente'
         verbose_name_plural = 'Gerentes'
 
 
-class Estoquista(Funcionario):
+class Estoquista(models.Model):
     codigo = models.CharField('Código', max_length=20)
+    salario = models.CharField('Salário', max_length=10)
+    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Estoquista'
         verbose_name_plural = 'Estoquistas'
 
 
-class Revendedora(Endereco):
+class Revendedora(models.Model):
     nome = models.CharField('Nome', max_length=50)
     cnpj = models.CharField('CNPJ', max_length=15)
+    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Revendedora'
@@ -73,9 +80,10 @@ class Revendedora(Endereco):
         return self.nome
 
 
-class Frete(Endereco):
+class Frete(models.Model):
     valor = models.CharField('Valor', max_length=7)
     codigo = models.CharField('Código', max_length=20)
+    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Frete'
