@@ -1,4 +1,12 @@
 from django.db import models
+from stdimage.models import StdImageField
+import uuid
+
+
+def get_file_path(_instance, filename):
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+    return filename
 
 
 class Endereco(models.Model):
@@ -28,10 +36,11 @@ class Funcionario(models.Model):
     telefone = models.CharField('Telefone', max_length=11, help_text='DD NNNNN-NNNN')
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
     endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
+    foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
 
     class Meta:
-        verbose_name = 'Funcionario'
-        verbose_name_plural = 'Funcionarios'
+        verbose_name = 'Funcionário'
+        verbose_name_plural = 'Funcionários'
 
     def __str__(self):
         return self.nome
