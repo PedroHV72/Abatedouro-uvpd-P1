@@ -33,7 +33,7 @@ class Funcionario(models.Model):
     )
     nome = models.CharField('Nome', max_length=50)
     cpf = models.CharField('CPF', max_length=11)
-    telefone = models.CharField('Telefone', max_length=11, help_text='DD NNNNN-NNNN')
+    telefone = models.CharField('Número celular', max_length=11, help_text='DD NNNNN-NNNN')
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
     endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
