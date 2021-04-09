@@ -139,8 +139,8 @@ class Pedido(models.Model):
     # nota fiscal
 
     class Meta:
-        verbose_name = 'Venda'
-        verbose_name_plural = 'Vendas'
+        verbose_name = 'Pedido'
+        verbose_name_plural = 'Pedidos'
 
     def __str__(self):
         return self.codigo_venda
