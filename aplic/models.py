@@ -126,6 +126,38 @@ class Venda(models.Model):
         return self.codigo_venda
 
 
+class Produto(models.Model):
+    TIPO = (
+        ('Coxa', 'Coxa'),
+        ('Peito', 'Peito'),
+        ('Sobrecoxa', 'Sobrecoxa'),
+        ('Asa', 'Asa'),
+    )
+    tipo = models.CharField('Tipo do produto', max_length=20, choices=TIPO)
+    codigo_produto = models.IntegerField('Código do produto')
+
+    class Meta:
+        verbose_name = 'Produto'
+        verbose_name_plural = 'Produtos'
+
+    def __str__(self):
+        return self.tipo
+
+
+class CaixaTransporte(models.Model):
+    codigo_caixa = models.IntegerField('Código da caixa')
+    quantidade_caixas = models.IntegerField('Total de caixas')
+    peso_total_caixa = models.FloatField('Peso total da caixa')
+    codigo_produto = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        verbose_name = 'Caixa de Transporte'
+        verbose_name_plural = 'Caixas de Transporte'
+
+    def __str__(self):
+        return self.codigo_caixa
+
+
 class Pedido(models.Model):
     STATUS = (
         ('Pedido aceito', 'Pedido aceito'),
@@ -136,6 +168,7 @@ class Pedido(models.Model):
     status = models.CharField('Status', max_length=20, choices=STATUS)
     valor_total_pedido = models.FloatField('Valor total do pedido')
     codigo_venda = models.ForeignKey(Venda, on_delete=models.DO_NOTHING)
+    codigo_caixa = models.ForeignKey(CaixaTransporte, on_delete=models.DO_NOTHING)
     # nota fiscal
 
     class Meta:
@@ -143,4 +176,4 @@ class Pedido(models.Model):
         verbose_name_plural = 'Pedidos'
 
     def __str__(self):
-        return self.codigo_venda
+        return self.codigo_pedido
