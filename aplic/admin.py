@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Frete, Veiculo
+from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Frete, Veiculo, Venda, Pedido
 
 
 @admin.register(Endereco)
@@ -41,3 +41,13 @@ class FreteAdmin(admin.ModelAdmin):
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
     list_display = ('placa', 'cor')
+
+
+@admin.register(Venda)
+class VendaAdmin(admin.ModelAdmin):
+    list_display = ('codigo_venda', 'valor_total_vendido')
+
+
+@admin.register(Pedido)
+class PedidoAdmin(admin.ModelAdmin):
+    list_display = ('data', 'codigo_pedido', 'status')
