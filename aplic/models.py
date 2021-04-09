@@ -110,3 +110,37 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return self.placa
+
+
+class Venda(models.Model):
+    codigo_venda = models.IntegerField('Código da venda')
+    valor_total_vendido = models.IntegerField('Valor total da venda')
+    codigo_frete = models.ForeignKey(Frete, on_delete=models.DO_NOTHING)
+    codigo_revendedora = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        verbose_name = 'Venda'
+        verbose_name_plural = 'Vendas'
+
+    def __str__(self):
+        return self.codigo_venda
+
+
+class Pedido(models.Model):
+    STATUS = (
+        ('Pedido aceito', 'Pedido aceito'),
+        ('Pedido recusado', 'Pedido recusado'),
+    )
+    data = models.DateField('Data')
+    codigo_pedido = models.IntegerField('Código do pedido')
+    status = models.CharField('Status', max_length=20, choices=STATUS)
+    valor_total_pedido = models.FloatField('Valor total do pedido')
+    codigo_venda = models.ForeignKey(Venda, on_delete=models.DO_NOTHING)
+    # nota fiscal
+
+    class Meta:
+        verbose_name = 'Venda'
+        verbose_name_plural = 'Vendas'
+
+    def __str__(self):
+        return self.codigo_venda
