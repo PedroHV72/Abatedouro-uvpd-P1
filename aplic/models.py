@@ -132,6 +132,7 @@ class Produto(models.Model):
         ('Peito', 'Peito'),
         ('Sobrecoxa', 'Sobrecoxa'),
         ('Asa', 'Asa'),
+        ('Coração', 'Coração'),
     )
     tipo = models.CharField('Tipo do produto', max_length=20, choices=TIPO)
     codigo_produto = models.IntegerField('Código do produto')
