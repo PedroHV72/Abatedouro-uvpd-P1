@@ -50,30 +50,27 @@ class Funcionario(models.Model):
         return self.nome
 
 
-class Motorista(models.Model):
+class Motorista(Funcionario):
     cnh = models.CharField('CNH', max_length=11)
     salario = models.CharField('Salário', max_length=10)
-    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Motorista'
         verbose_name_plural = 'Motoristas'
 
 
-class Gerente(models.Model):
+class Gerente(Funcionario):
     codigo = models.CharField('Código', max_length=20)
     salario = models.CharField('Salário', max_length=10)
-    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Gerente'
         verbose_name_plural = 'Gerentes'
 
 
-class Estoquista(models.Model):
+class Estoquista(Funcionario):
     codigo = models.CharField('Código', max_length=20)
     salario = models.CharField('Salário', max_length=10)
-    funcionario = models.ForeignKey(Funcionario, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Estoquista'
