@@ -5,7 +5,7 @@ from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Reven
 
 @admin.register(Endereco)
 class EnderecoAdmin(admin.ModelAdmin):
-    list_display = ('cidade', 'estado')
+    list_display = ('cidade', 'estado', 'tipo_endereco')
 
 
 @admin.register(Funcionario)
