@@ -37,6 +37,9 @@ class Funcionario(models.Model):
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
     endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
+    facebook = models.CharField('Facebook', blank=True, max_length=200)
+    twitter = models.CharField('Twitter', blank=True, max_length=200)
+    instagram = models.CharField('Instagram', blank=True, max_length=200)
 
     class Meta:
         verbose_name = 'Funcionário'

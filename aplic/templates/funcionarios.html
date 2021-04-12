@@ -1,5 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,18 @@
 		<meta name="author" content="">
 		<title>Core - Template</title>
 		<!-- Favicons-->
-		<link rel="shortcut icon" href="assets/images/favicon.png">
-		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+		<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
 		<!-- Web Fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Hind:400,700%7cLora:400i%7cPoppins:500,600,700" rel="stylesheet">
 		<!-- Bootstrap core CSS-->
-		<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 		<!-- Plugins and Icon Fonts-->
-		<link href="assets/css/plugins.min.css" rel="stylesheet">
+		<link href="{% static 'css/plugins.min.css' %}" rel="stylesheet">
 		<!-- Template core CSS-->
-		<link href="assets/css/template.min.css" rel="stylesheet">
+		<link href="{% static 'css/template.css' %}" rel="stylesheet">
 	</head>
 	<body>
 
@@ -29,7 +30,7 @@
 			<header class="header header-center undefined">
 				<div class="container-fluid">
 					<!-- Logos-->
-					<div class="inner-header"><a class="inner-brand" href="index.html"><img class="brand-dark" src="assets/images/logo.png" width="77px" alt=""><img class="brand-light" src="assets/images/logo-light.png" width="77px" alt="">
+					<div class="inner-header"><a class="inner-brand" href="{% url 'index' %}"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
 							<!-- Or simple text-->
 							<!-- Core--></a></div>
 					<!-- Navigation-->
@@ -44,7 +45,7 @@
 												<!-- Column 1-->
 												<li class="menu-item-has-children mega-menu-col"><a href="#">Basic</a>
 													<ul class="sub-menu">
-														<li><a href="index.html">Parallax Dark</a></li>
+														<li><a href="{% url 'index' %}">Parallax Dark</a></li>
 														<li><a href="index-2.html">Parallax Light</a></li>
 														<li><a href="index-3.html">Parallax Gradient</a></li>
 														<li><a href="index-4.html">Full Screen Slider</a></li>
@@ -125,7 +126,7 @@
 											<li class="menu-item-has-children"><a href="#">Navigation</a>
 												<ul class="sub-menu">
 													<li><a href="nav-left.html">Left Nav</a></li>
-													<li><a href="index.html">Center Nav</a></li>
+													<li><a href="{% url 'index' %}">Center Nav</a></li>
 													<li><a href="nav-right.html">Right Nav</a></li>
 													<li><a href="dark-sub-menu.html">Submenu Dark</a></li>
 												</ul>
@@ -301,7 +302,7 @@
 			<div class="wrapper">
 
 				<!-- Page Header-->
-				<section class="module-header parallax bg-dark bg-dark-30" data-background="assets/images/module-12.jpg">
+				<section class="module-header parallax bg-dark bg-dark-30" data-background="{% static 'images/module-12.jpg' %}">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -327,7 +328,7 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/1.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/1.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Jason Ford</h5>
 											<p>Designer</p>
@@ -345,7 +346,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/2.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/2.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Michael Andrews</h5>
 											<p>Programmer</p>
@@ -363,7 +364,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/3.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/3.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Samuel Banks</h5>
 											<p>Developer</p>
@@ -398,7 +399,7 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/1.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/1.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Jason Ford</h5>
 											<p>Designer</p>
@@ -416,7 +417,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/2.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/2.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Michael Andrews</h5>
 											<p>Programmer</p>
@@ -434,7 +435,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="team-item m-b-30">
-									<div class="team-image"><img src="assets/images/team/3.jpg" alt="">
+									<div class="team-image"><img src="{% static 'images/team/3.jpg' %}" alt="">
 										<div class="team-content">
 											<h5>Samuel Banks</h5>
 											<p>Developer</p>
@@ -483,7 +484,7 @@
 								<!-- Text widget-->
 								<aside class="widget widget_text">
 									<div class="textwidget">
-										<p><img src="assets/images/logo-light.png" width="100" alt=""></p>
+										<p><img src="{% static 'images/logo-light.png' %}" width="100" alt=""></p>
 										<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat.</p>E-mail: <a href="mailto:support@core.com">support@core.com</a> <br/>
 										Phone: 8 800 123 4567 <br/>
 										Fax: 8 800 123 4567 <br/>
@@ -550,13 +551,13 @@
 					<!-- Text widget-->
 					<aside class="widget widget_text">
 						<div class="textwidget">
-							<p class="text-center"><img src="assets/images/logo-light.png" width="100" alt=""></p>
+							<p class="text-center"><img src="{% static 'images/logo-light.png' %}" width="100" alt=""></p>
 						</div>
 					</aside>
 					<!-- Text widget-->
 					<aside class="widget widget_text">
 						<div class="textwidget">
-							<p class="text-center"><img src="assets/images/offcanvas.jpg" alt=""></p>
+							<p class="text-center"><img src="{% static 'images/offcanvas.jpg' %}" alt=""></p>
 						</div>
 					</aside>
 					<!-- Navmenu widget-->
@@ -585,14 +586,14 @@
 		<!-- Scripts-->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
-		<script src="assets/js/plugins.min.js"></script>
-		<script src="assets/js/charts.js"></script>
-		<script src="assets/js/custom.min.js"></script>
+		<script src="{% static 'js/plugins.min.js' %}"></script>
+		<script src="{% static 'js/charts.js' %}"></script>
+		<script src="{% static 'js/custom.min.js' %}"></script>
 
 		<!-- Color Switcher (Remove these lines)-->
-		<script src="assets/js/style-switcher.min.js"></script>
+		<script src="{% static 'js/style-switcher.min.js' %}"></script>
 	</body>
 </html>

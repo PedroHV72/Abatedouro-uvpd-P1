@@ -30,7 +30,7 @@
 			<header class="header header-center undefined">
 				<div class="container-fluid">
 					<!-- Logos-->
-					<div class="inner-header"><a class="inner-brand" href="index.html"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
+					<div class="inner-header"><a class="inner-brand" href="{% url 'index' %}"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
 							<!-- Or simple text-->
 							<!-- Core--></a></div>
 					<!-- Navigation-->
@@ -50,14 +50,14 @@
 									</li>
 									<!-- Shop end-->
 									<!-- Simple-->
-									<li><a href="start.html">Funcionários</a></li>
+									<li><a href="{% url 'funcionarios' %}">Funcionários</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="extra-nav">
 						<ul>
-							<li><a href="esconde"><span>Login</span></a></li>
+							<li><a href="/esconde"><span>Login</span></a></li>
 						</ul>
 					</div>
 					<!-- Mobile menu-->
