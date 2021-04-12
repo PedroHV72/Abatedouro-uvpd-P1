@@ -15,17 +15,17 @@ class FuncionarioAdmin(admin.ModelAdmin):
 
 @admin.register(Motorista)
 class MotoristaAdmin(admin.ModelAdmin):
-    list_display = ('salario', 'cnh')
+    list_display = ('nome', 'salario', 'cnh')
 
 
 @admin.register(Gerente)
 class GerenteAdmin(admin.ModelAdmin):
-    list_display = ('salario', 'codigo')
+    list_display = ('nome', 'salario', 'codigo')
 
 
 @admin.register(Estoquista)
 class EstoquistaAdmin(admin.ModelAdmin):
-    list_display = ('salario', 'codigo')
+    list_display = ('nome', 'salario', 'codigo')
 
 
 @admin.register(Revendedora)
