@@ -10,19 +10,24 @@ def get_file_path(_instance, filename):
 
 
 class Endereco(models.Model):
+    ENDERECOS = (
+        ('Funcionário', 'Funcionário'),
+        ('Revendedora', 'Revendedora'),
+    )
     rua = models.CharField('Rua', max_length=50)
     cidade = models.CharField('Cidade', max_length=50)
     bairro = models.CharField('Bairro', max_length=50)
     estado = models.CharField('Estado', max_length=40)
-    complemento = models.CharField('Complemento', max_length=10)
+    complemento = models.CharField('Complemento', max_length=10, blank=True)
     numero = models.IntegerField('Número')
+    tipo_endereco = models.CharField('Tipo de Endereço', max_length=40, choices=ENDERECOS)
 
     class Meta:
         verbose_name = 'Endereço'
         verbose_name_plural = 'Endereços'
 
     def __str__(self):
-        return f"{self.rua} / {self.cidade} / {self.estado} / {self.numero}"
+        return f"{self.rua} / {self.cidade} / {self.estado} / {self.numero} / {self.tipo_endereco}"
 
 
 class Funcionario(models.Model):
@@ -35,7 +40,7 @@ class Funcionario(models.Model):
     cpf = models.CharField('CPF', max_length=11)
     telefone = models.CharField('Número celular', max_length=11, help_text='DD NNNNN-NNNN')
     cargo = models.CharField('Cargo', max_length=40, choices=OPCOES)
-    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
+    endereco = models.ForeignKey(Endereco, null=True, on_delete=models.CASCADE)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
     idade = models.IntegerField('Idade')
     facebook = models.CharField('Facebook', blank=True, max_length=200)
@@ -77,10 +82,9 @@ class Estoquista(Funcionario):
         verbose_name_plural = 'Estoquistas'
 
 
-class Revendedora(models.Model):
+class Revendedora(Endereco):
     nome = models.CharField('Nome', max_length=50)
     cnpj = models.CharField('CNPJ', max_length=15)
-    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Revendedora'
@@ -101,9 +105,14 @@ class Frete(models.Model):
 
 
 class Veiculo(models.Model):
+    MARCAS = (
+        ('Volvo', 'Volvo'),
+        ('Scania', 'Scania'),
+        ('Volkswagen', 'Volkswagen'),
+    )
     placa = models.CharField('Placa', max_length=7)
     cor = models.CharField('Cor', max_length=15)
-    motorista = models.ForeignKey(Motorista, null=True, on_delete=models.SET_NULL)
+    marca = models.CharField('Marca', max_length=50, choices=MARCAS)
 
     class Meta:
         verbose_name = 'Veículo'

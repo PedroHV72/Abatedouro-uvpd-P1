@@ -40,7 +40,7 @@ class FreteAdmin(admin.ModelAdmin):
 
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
-    list_display = ('placa', 'cor')
+    list_display = ('marca', 'placa', 'cor')
 
 
 @admin.register(Venda)
