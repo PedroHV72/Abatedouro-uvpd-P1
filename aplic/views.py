@@ -20,5 +20,5 @@ class RevendedoraView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(RevendedoraView, self).get_context_data(**kwargs)
-        context['revendedoras'] = Funcionario.objects.order_by('nome').all()
+        context['revendedoras'] = Revendedora.objects.order_by('nome').all()
         return context
