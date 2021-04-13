@@ -85,6 +85,10 @@ class Estoquista(Funcionario):
 class Revendedora(Endereco):
     nome = models.CharField('Nome', max_length=50)
     cnpj = models.CharField('CNPJ', max_length=15)
+    foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
+    facebook = models.CharField('Facebook', blank=True, max_length=200)
+    twitter = models.CharField('Twitter', blank=True, max_length=200)
+    instagram = models.CharField('Instagram', blank=True, max_length=200)
 
     class Meta:
         verbose_name = 'Revendedora'
