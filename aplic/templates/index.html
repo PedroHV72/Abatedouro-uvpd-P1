@@ -30,7 +30,7 @@
 			<header class="header header-center undefined">
 				<div class="container-fluid">
 					<!-- Logos-->
-					<div class="inner-header"><a class="inner-brand" href="{% url 'index' %}"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
+					<div class="inner-header"><a class="inner-brand" href="#"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
 							<!-- Or simple text-->
 							<!-- Core--></a></div>
 					<!-- Navigation-->
@@ -50,7 +50,7 @@
 									</li>
 									<!-- Shop end-->
 									<!-- Simple-->
-									<li><a href="#">Encomendas</a></li>
+									<li><a href="{% url 'produtos' %}">Encomendas</a></li>
 								</ul>
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 							<div class="col-md-12">
 								<h1 class="h2 m-b-20">Bem vindo ao Abatedouro UVPD</h1>
 								<h1 class="h3 m-b-20"><span class="rotate">Qualidade | Comprometimento | Confiabilidade</span></h1>
-								<p class="m-b-40">Built to help photographer, designers, developers and companies create flexible and lightweight <br>websites, saving their time with smart implementation and easy customization.</p>
+								<p class="m-b-40">Nova empresa que chegou para abastecer e atender todas as cidades do interior do Rio de Janeiro.</p>
 							</div>
 						</div>
 					</div>
@@ -89,50 +89,34 @@
 						<div class="row">
 							<div class="col-md-3">
 								<div class="icon-box text-center">
-									<div class="icon-box-icon"><span class="icon icon-basic-pencil-ruler"></span></div>
+									<div class="icon-box-icon"><span class="fa fa-instagram"></span></div>
 									<div class="icon-box-title">
-										<h6>Excellent Designs</h6>
+										<h6>Instagram</h6>
 									</div>
-									<div class="icon-box-content">
-										<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum dolor sit amet.</p>
-									</div>
-									<div class="icon-box-link"><a href="#">Take a tour</a></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="icon-box text-center">
-									<div class="icon-box-icon"><span class="icon icon-basic-paperplane"></span></div>
+									<div class="icon-box-icon"><span class="fa fa-facebook"></span></div>
 									<div class="icon-box-title">
-										<h6>Fully Responsive</h6>
+										<h6>Facebook</h6>
 									</div>
-									<div class="icon-box-content">
-										<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum dolor sit amet.</p>
-									</div>
-									<div class="icon-box-link"><a href="#">Take a tour</a></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="icon-box text-center">
-									<div class="icon-box-icon"><span class="icon icon-basic-heart"></span></div>
+									<div class="icon-box-icon"><span class="fa fa-twitter"></span></div>
 									<div class="icon-box-title">
-										<h6>User Friendly</h6>
+										<h6>Twitter</h6>
 									</div>
-									<div class="icon-box-content">
-										<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum dolor sit amet.</p>
-									</div>
-									<div class="icon-box-link"><a href="#">Take a tour</a></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="icon-box text-center">
-									<div class="icon-box-icon"><span class="icon icon-basic-server-download"></span></div>
+									<div class="icon-box-icon"><span class="fa fa-youtube"></span></div>
 									<div class="icon-box-title">
-										<h6>Free Updates</h6>
+										<h6>Youtube</h6>
 									</div>
-									<div class="icon-box-content">
-										<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam lorem ipsum dolor sit amet.</p>
-									</div>
-									<div class="icon-box-link"><a href="#">Take a tour</a></div>
 								</div>
 							</div>
 						</div>
@@ -160,71 +144,21 @@
 				</section>
 				<!-- Portfolio-->
 				<section class="module module-divider-bottom p-0">
-					<div class="container-fluid">
+					<div class="container-fluid"></div>
 						<div class="row row-portfolio" date-portfolio-type="standard" data-columns="3">
+							{% for f in foto %}
 							<div class="grid-sizer"></div>
 							<div class="portfolio-item branding photo undefined">
 								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-1.jpg' %}" alt="">
+									<img src="{{ f.foto.thumb.url }}" alt="">
 									<div class="portfolio-overlay"></div>
 								</div>
 								<div class="portfolio-caption">
-									<h5 class="portfolio-title">Mutualismi</h5>
-									<div class="portfolio-subtitle font-serif">Branding</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
-							</div>
-							<div class="portfolio-item web design undefined">
-								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-7.jpg' %}" alt="">
-									<div class="portfolio-overlay"></div>
+									<h5 class="portfolio-title">{{ f.nome }}</h5>
 								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">The Perfume</h5>
-									<div class="portfolio-subtitle font-serif">Design</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
 							</div>
-							<div class="portfolio-item photo web undefined">
-								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-3.jpg' %}" alt="">
-									<div class="portfolio-overlay"></div>
-								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">Bumblebee Icons</h5>
-									<div class="portfolio-subtitle font-serif">Design</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
-							</div>
-							<div class="portfolio-item design branding undefined">
-								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-4.jpg' %}" alt="">
-									<div class="portfolio-overlay"></div>
-								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">Greedy Emperor</h5>
-									<div class="portfolio-subtitle font-serif">Design</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
-							</div>
-							<div class="portfolio-item design photo undefined">
-								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-5.jpg' %}" alt="">
-									<div class="portfolio-overlay"></div>
-								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">Bluetooth Speaker</h5>
-									<div class="portfolio-subtitle font-serif">Design</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
-							</div>
-							<div class="portfolio-item branding web undefined">
-								<div class="portfolio-wrapper">
-									<img src="{% static 'images/portfolio/img-6.jpg' %}" alt="">
-									<div class="portfolio-overlay"></div>
-								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">Candy Icons</h5>
-									<div class="portfolio-subtitle font-serif">Design</div>
-								</div><a class="portfolio-link" href="portfolio-single-1.html"></a>
-							</div>
+							{% endfor %}
 						</div>
-					</div>
 				</section>
 				<!-- Portfolio end-->
 
@@ -254,8 +188,8 @@
 											<div>
 												<div class="timeline-box">
 													<div class="timeline-content">
-														<h6>Fully Responsive</h6>
-														<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+														<h6>Criação</h6>
+														<p>Nossa empresa foi criada com o propósito de atender na região Sul Fluminense do Rio de Janeiro.</p>
 													</div>
 												</div>
 											</div>
@@ -264,8 +198,8 @@
 											<div>
 												<div class="timeline-box">
 													<div class="timeline-content">
-														<h6>Plugin Development</h6>
-														<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+														<h6>Localização</h6>
+														<p>Nosso abatedouro está localizado na região entre as cidades Valença e Vassouras.</p>
 													</div>
 												</div>
 											</div>
@@ -274,18 +208,8 @@
 											<div>
 												<div class="timeline-box">
 													<div class="timeline-content">
-														<h6>Free Updates</h6>
-														<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div>
-												<div class="timeline-box">
-													<div class="timeline-content">
-														<h6>Theme Development</h6>
-														<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+														<h6>Produção</h6>
+														<p>Os produtos tratados em nosso abatedouro são de primeira qualidade, e também com o suporte para abranger e atender toda a região.</p>
 													</div>
 												</div>
 											</div>
@@ -304,45 +228,36 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6 col-lg-3">
-								<!-- Text widget-->
-								<aside class="widget widget_text">
-									<div class="textwidget">
-										<p><img src="{% static 'images/logo-light.png' %}" width="100" alt=""></p>
-										<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat.</p>E-mail: <a href="mailto:support@core.com">support@core.com</a> <br/>
-										Phone: 8 800 123 4567 <br/>
-										Fax: 8 800 123 4567 <br/>
+								<!-- Recent entries widget-->
+								<aside class="widget widget_recent_entries">
+									<div class="widget-title">
+										<h5>Contato</h5>
 									</div>
+									<ul>
+										<li><a href="#">Telefone: (24) 99999-9999 </a></li>
+									</ul>
 								</aside>
 							</div>
 							<div class="col-md-6 col-lg-3">
 								<!-- Recent entries widget-->
 								<aside class="widget widget_recent_entries">
 									<div class="widget-title">
-										<h5>Recent Posts</h5>
+										<h5>Endereço</h5>
 									</div>
 									<ul>
-										<li><a href="#">Experience the sound of a modern and clean 360° Bluetooth Speaker.</a> <span class="post-date">May 8, 2016</span></li>
-										<li><a href="#">Experience the sound of a modern and clean 360° Bluetooth Speaker.</a> <span class="post-date">April 7, 2016</span></li>
-										<li><a href="#">Experience the sound of a modern and clean 360° Bluetooth Speaker.</a> <span class="post-date">April 7, 2016</span></li>
+										<li><a href="#">Endereço: Av. Expedicionário Oswaldo de Almeida Ramos, N 280</a> <span class="post-date">Vasouras</span></li>
 									</ul>
 								</aside>
 							</div>
 							<div class="col-md-6 col-lg-3">
-								<!-- Twitter widget-->
-								<aside class="widget twitter-feed-widget">
+								<!-- Recent entries widget-->
+								<aside class="widget widget_recent_entries">
 									<div class="widget-title">
-										<h5>Twitter Feed</h5>
+										<h5>E-mail</h5>
 									</div>
-									<div class="twitter-feed" data-twitter="345170787868762112" data-number="1"></div>
-								</aside>
-							</div>
-							<div class="col-md-6 col-lg-3">
-								<!-- Tags widget-->
-								<aside class="widget widget_tag_cloud">
-									<div class="widget-title">
-										<h5>Tags</h5>
-									</div>
-									<div class="tagcloud"><a href="#">Design</a><a href="#">Travel</a><a href="#">Startup</a><a href="#">Music</a><a href="#">Portfolio</a><a href="#">Responsive</a></div>
+									<ul>
+										<li><a href="#">support@abatedouro.com</a></li>
+									</ul>
 								</aside>
 							</div>
 						</div>
@@ -351,7 +266,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="text-center"><span class="copyright">© 2017 Core, All Rights Reserved. Design with love by <a href="http://2the.me/">2the.me</a></span></div>
+									<div class="text-center"><span class="copyright">© 2021 - Todos os direitos reservados - Pedro Vasconcelos e Davi Bernardo</a></span></div>
 								</div>
 							</div>
 						</div>

@@ -126,20 +126,6 @@ class Veiculo(models.Model):
         return self.placa
 
 
-class Venda(models.Model):
-    codigo_venda = models.IntegerField('Código da venda')
-    valor_total_vendido = models.IntegerField('Valor total da venda')
-    codigo_frete = models.ForeignKey(Frete, on_delete=models.DO_NOTHING)
-    codigo_revendedora = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
-
-    class Meta:
-        verbose_name = 'Venda'
-        verbose_name_plural = 'Vendas'
-
-    def __str__(self):
-        return self.codigo_venda
-
-
 class Produto(models.Model):
     TIPO = (
         ('Coxa', 'Coxa'),
@@ -149,6 +135,7 @@ class Produto(models.Model):
         ('Coração', 'Coração'),
     )
     tipo = models.CharField('Tipo do produto', max_length=20, choices=TIPO)
+    foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
     codigo_produto = models.IntegerField('Código do produto')
 
     class Meta:
@@ -159,32 +146,17 @@ class Produto(models.Model):
         return self.tipo
 
 
-class CaixaTransporte(models.Model):
-    codigo_caixa = models.IntegerField('Código da caixa')
-    quantidade_caixas = models.IntegerField('Total de caixas')
-    peso_total_caixa = models.FloatField('Peso total da caixa')
-    codigo_produto = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
-
-    class Meta:
-        verbose_name = 'Caixa de Transporte'
-        verbose_name_plural = 'Caixas de Transporte'
-
-    def __str__(self):
-        return self.codigo_caixa
-
-
 class Pedido(models.Model):
     STATUS = (
         ('Pedido aceito', 'Pedido aceito'),
         ('Pedido recusado', 'Pedido recusado'),
     )
+    codigo_produto = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
+    quantidade_produto = models.IntegerField('Quantidade do produto')
     data = models.DateField('Data')
     codigo_pedido = models.IntegerField('Código do pedido')
     status = models.CharField('Status', max_length=20, choices=STATUS)
     valor_total_pedido = models.FloatField('Valor total do pedido')
-    codigo_venda = models.ForeignKey(Venda, on_delete=models.DO_NOTHING)
-    codigo_caixa = models.ForeignKey(CaixaTransporte, on_delete=models.DO_NOTHING)
-    # nota fiscal
 
     class Meta:
         verbose_name = 'Pedido'
@@ -192,6 +164,21 @@ class Pedido(models.Model):
 
     def __str__(self):
         return self.codigo_pedido
+
+
+class Venda(models.Model):
+    codigo_venda = models.IntegerField('Código da venda')
+    codigo_pedido = models.ForeignKey(Pedido, on_delete=models.DO_NOTHING)
+    codigo_frete = models.ForeignKey(Frete, on_delete=models.DO_NOTHING)
+    codigo_revendedora = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
+    valor_total_vendido = models.IntegerField('Valor total da venda')
+
+    class Meta:
+        verbose_name = 'Venda'
+        verbose_name_plural = 'Vendas'
+
+    def __str__(self):
+        return self.codigo_venda
 
 
 class Galeria(models.Model):
@@ -203,4 +190,4 @@ class Galeria(models.Model):
         verbose_name_plural = 'Fotos da Galeria'
 
     def __str__(self):
-        return self.foto
+        return self.nome
