@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Frete, Veiculo, Venda, Pedido, CaixaTransporte, Produto
+from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Frete, Veiculo, Venda, Pedido, CaixaTransporte, Produto, Galeria
 
 
 @admin.register(Endereco)
@@ -61,3 +61,8 @@ class CaixaTransporteAdmin(admin.ModelAdmin):
 @admin.register(Produto)
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = ('codigo_produto', 'tipo')
+
+
+@admin.register(Galeria)
+class GaleriaAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'foto')

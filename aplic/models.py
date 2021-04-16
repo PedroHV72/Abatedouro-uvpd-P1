@@ -192,3 +192,15 @@ class Pedido(models.Model):
 
     def __str__(self):
         return self.codigo_pedido
+
+
+class Galeria(models.Model):
+    nome = models.CharField('Nome da foto', max_length=50)
+    foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 1100, 'height': 700, 'crop': True}})
+
+    class Meta:
+        verbose_name = 'Foto da Galeria'
+        verbose_name_plural = 'Fotos da Galeria'
+
+    def __str__(self):
+        return self.foto
