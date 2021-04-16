@@ -171,6 +171,8 @@ class Venda(models.Model):
     codigo_pedido = models.ForeignKey(Pedido, on_delete=models.DO_NOTHING)
     codigo_frete = models.ForeignKey(Frete, on_delete=models.DO_NOTHING)
     codigo_revendedora = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
+    cnh_motorista = models.ForeignKey(Motorista, on_delete=models.DO_NOTHING)
+    placa_veiculo = models.ForeignKey(Veiculo, on_delete=models.DO_NOTHING)
     valor_total_vendido = models.IntegerField('Valor total da venda')
 
     class Meta:

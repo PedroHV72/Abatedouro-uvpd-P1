@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Core - Template</title>
+		<title>Início</title>
 		<!-- Favicons-->
 		<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 		<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
@@ -129,38 +129,7 @@
 				</section>
 				<!-- Services end-->
 
-				<!-- Portfolio-->
-				<section class="module p-b-0">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8 m-auto">
-								<div class="module-title text-center">
-									<h2>Galeria de Fotos</h2>
-									<p class="font-serif">Conheça um pouco da nossa estrutura</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- Portfolio-->
-				<section class="module module-divider-bottom p-0">
-					<div class="container-fluid"></div>
-						<div class="row row-portfolio" date-portfolio-type="standard" data-columns="3">
-							{% for f in foto %}
-							<div class="grid-sizer"></div>
-							<div class="portfolio-item branding photo undefined">
-								<div class="portfolio-wrapper">
-									<img src="{{ f.foto.thumb.url }}" alt="">
-									<div class="portfolio-overlay"></div>
-								</div>
-								<div class="portfolio-caption">
-									<h5 class="portfolio-title">{{ f.nome }}</h5>
-								</div>
-							</div>
-							{% endfor %}
-						</div>
-				</section>
-				<!-- Portfolio end-->
+				{% include 'galeria.html' %}
 
 				<br><br><br>
 
