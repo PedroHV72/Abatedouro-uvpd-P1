@@ -5,12 +5,12 @@ from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Reven
 
 @admin.register(Endereco)
 class EnderecoAdmin(admin.ModelAdmin):
-    list_display = ('cidade', 'estado', 'tipo_endereco')
+    list_display = ('logradouro', 'cidade', 'estado')
 
 
 @admin.register(Funcionario)
 class FuncionarioAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'cpf', 'cargo')
+    list_display = ('nome', 'cpf')
 
 
 @admin.register(Motorista)
@@ -40,7 +40,7 @@ class FreteAdmin(admin.ModelAdmin):
 
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
-    list_display = ('marca', 'placa', 'cor')
+    list_display = ('placa', 'cor')
 
 
 @admin.register(Venda)
@@ -55,7 +55,7 @@ class PedidoAdmin(admin.ModelAdmin):
 
 @admin.register(Produto)
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ('codigo_produto', 'tipo')
+    list_display = ('tipo', 'codigo_produto')
 
 
 @admin.register(Galeria)
