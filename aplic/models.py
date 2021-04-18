@@ -30,7 +30,7 @@ class Funcionario(models.Model):
     nome = models.CharField('Nome', max_length=50)
     cpf = models.CharField('CPF', max_length=11)
     telefone = models.CharField('Número celular', max_length=13, help_text='DD NNNNN-NNNN')
-    endereco = models.ForeignKey(Endereco, null=True, on_delete=models.DO_NOTHING)
+    endereco = models.ManyToManyField(Endereco)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
     data_nasc = models.DateField('Data de Nascimento')
     facebook = models.CharField('Facebook', blank=True, max_length=200)
@@ -54,11 +54,10 @@ class Motorista(Funcionario):
         verbose_name_plural = 'Motoristas'
 
     def __str__(self):
-        return self.cnh
+        return f"{self.id} / {self.nome}"
 
 
 class Gerente(Funcionario):
-    codigo = models.CharField('Código', max_length=20)
     salario = models.CharField('Salário', max_length=10)
 
     class Meta:
@@ -66,11 +65,10 @@ class Gerente(Funcionario):
         verbose_name_plural = 'Gerentes'
 
     def __str__(self):
-        return self.codigo
+        return f"{self.id} / {self.nome}"
 
 
 class Estoquista(Funcionario):
-    codigo = models.CharField('Código', max_length=20)
     salario = models.CharField('Salário', max_length=10)
 
     class Meta:
@@ -78,13 +76,13 @@ class Estoquista(Funcionario):
         verbose_name_plural = 'Estoquistas'
 
     def __str__(self):
-        return self.codigo
+        return f"{self.id} / {self.nome}"
 
 
 class Revendedora(models.Model):
+    cnpj = models.IntegerField('CNPJ', unique=True)
     nome = models.CharField('Nome', max_length=50)
-    cnpj = models.CharField('CNPJ', max_length=15)
-    endereco = models.ForeignKey(Endereco, null=True, on_delete=models.DO_NOTHING)
+    endereco = models.ManyToManyField(Endereco)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
     facebook = models.CharField('Facebook', blank=True, max_length=200)
     twitter = models.CharField('Twitter', blank=True, max_length=200)
@@ -96,19 +94,6 @@ class Revendedora(models.Model):
 
     def __str__(self):
         return self.nome
-
-
-class Frete(models.Model):
-    valor = models.CharField('Valor', max_length=7)
-    codigo = models.CharField('Código', max_length=20)
-    endereco = models.ForeignKey(Endereco, on_delete=models.DO_NOTHING)
-
-    class Meta:
-        verbose_name = 'Frete'
-        verbose_name_plural = 'Fretes'
-
-    def __str__(self):
-        return self.codigo
 
 
 class Veiculo(models.Model):
@@ -124,23 +109,16 @@ class Veiculo(models.Model):
 
 
 class Produto(models.Model):
-    TIPO = (
-        ('Coxa', 'Coxa'),
-        ('Peito', 'Peito'),
-        ('Sobrecoxa', 'Sobrecoxa'),
-        ('Asa', 'Asa'),
-        ('Coração', 'Coração'),
-    )
-    tipo = models.CharField('Tipo do produto', max_length=20, choices=TIPO)
+    nome = models.CharField('Nome do produto', max_length=55)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
-    codigo_produto = models.IntegerField('Código do produto')
+    disponibilidade = models.BooleanField('Disponibilidade')
 
     class Meta:
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
 
     def __str__(self):
-        return self.tipo
+        return f"{self.id} / {self.nome}"
 
 
 class Pedido(models.Model):
@@ -148,10 +126,10 @@ class Pedido(models.Model):
         ('Aceito', 'Aceito'),
         ('Recusado', 'Recusado'),
     )
-    codigo_produto = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
+    produto_id = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
+    revendedora_id = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
     quantidade_produto = models.IntegerField('Quantidade do produto')
     data = models.DateField('Data')
-    codigo_pedido = models.CharField('Código do pedido', max_length=10)
     status = models.CharField('Status', max_length=20, choices=STATUS)
     valor_total_pedido = models.FloatField('Valor total do pedido')
 
@@ -160,15 +138,17 @@ class Pedido(models.Model):
         verbose_name_plural = 'Pedidos'
 
     def __str__(self):
-        return self.codigo_pedido
+        return f"{self.id} / {self.revendedora_id} / {self.data}"
+
+
+class ProdutoPedido(models.Model):
+    pedido_id = models.ForeignKey(Pedido, on_delete=models.DO_NOTHING)
+    produto_id = models.ForeignKey(Produto, on_delete=models.DO_NOTHING)
 
 
 class Venda(models.Model):
-    codigo_venda = models.CharField('Código da venda', max_length=10)
-    codigo_pedido = models.ForeignKey(Pedido, on_delete=models.DO_NOTHING)
-    codigo_revendedora = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
-    cnh_motorista = models.ForeignKey(Motorista, on_delete=models.DO_NOTHING)
-    placa_veiculo = models.ForeignKey(Veiculo, on_delete=models.DO_NOTHING)
+    pedido_id = models.ManyToManyField(Pedido)
+    revendedora_id = models.ForeignKey(Revendedora, on_delete=models.DO_NOTHING)
     valor_total_vendido = models.CharField('Valor total da venda', max_length=10)
 
     class Meta:
@@ -176,7 +156,22 @@ class Venda(models.Model):
         verbose_name_plural = 'Vendas'
 
     def __str__(self):
-        return self.codigo_venda
+        return f"{self.id} / {self.valor_total_vendido} / {self.revendedora_id}"
+
+
+class Entrega(models.Model):
+    data_entrega = models.DateField('Data da Entrega')
+    melhor_horario = models.TimeField('Melhor horário para entrega')
+    valor_entrega = models.CharField('Valor frete', max_length=7)
+    venda = models.ForeignKey(Venda, on_delete=models.DO_NOTHING)
+    motorista = models.ForeignKey(Motorista, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        verbose_name = 'Entrega'
+        verbose_name_plural = 'Entregas'
+
+    def __str__(self):
+        return f"{self.id} / {self.data_entrega} / {self.melhor_horario} / {self.motorista} / {self.valor_entrega}"
 
 
 class Galeria(models.Model):

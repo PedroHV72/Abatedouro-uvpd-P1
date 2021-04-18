@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Frete, Veiculo, Venda, Pedido, Produto, Galeria
+from .models import Endereco, Funcionario, Motorista, Gerente, Estoquista, Revendedora, Entrega, Veiculo, Venda, Pedido, Produto, Galeria
 
 
 @admin.register(Endereco)
@@ -20,22 +20,22 @@ class MotoristaAdmin(admin.ModelAdmin):
 
 @admin.register(Gerente)
 class GerenteAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'salario', 'codigo')
+    list_display = ('id', 'nome', 'salario')
 
 
 @admin.register(Estoquista)
 class EstoquistaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'salario', 'codigo')
+    list_display = ('id', 'nome', 'salario')
 
 
 @admin.register(Revendedora)
 class RevendedoraAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'cnpj')
+    list_display = ('cnpj', 'nome')
 
 
-@admin.register(Frete)
-class FreteAdmin(admin.ModelAdmin):
-    list_display = ('valor', 'codigo')
+@admin.register(Entrega)
+class EntregaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'valor_entrega')
 
 
 @admin.register(Veiculo)
@@ -45,17 +45,17 @@ class VeiculoAdmin(admin.ModelAdmin):
 
 @admin.register(Venda)
 class VendaAdmin(admin.ModelAdmin):
-    list_display = ('codigo_venda', 'valor_total_vendido')
+    list_display = ('id', 'valor_total_vendido')
 
 
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ('data', 'codigo_pedido', 'status')
+    list_display = ('id', 'data', 'status')
 
 
 @admin.register(Produto)
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ('tipo', 'codigo_produto')
+    list_display = ('id', 'nome')
 
 
 @admin.register(Galeria)
