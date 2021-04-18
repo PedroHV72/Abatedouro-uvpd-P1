@@ -96,18 +96,6 @@ class Revendedora(models.Model):
         return self.nome
 
 
-class Veiculo(models.Model):
-    placa = models.CharField('Placa', max_length=7)
-    cor = models.CharField('Cor', max_length=15)
-
-    class Meta:
-        verbose_name = 'Veículo'
-        verbose_name_plural = 'Veículos'
-
-    def __str__(self):
-        return self.placa
-
-
 class Produto(models.Model):
     nome = models.CharField('Nome do produto', max_length=55)
     foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 870, 'height': 1110, 'crop': True}})
