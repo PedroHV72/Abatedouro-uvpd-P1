@@ -1,0 +1,40 @@
+{% load static %}
+<!-- Header-->
+			<header class="header header-center undefined">
+				<div class="container-fluid">
+					<!-- Logos-->
+					<div class="inner-header"><a class="inner-brand" href="#"><img class="brand-dark" src="{% static 'images/logo.png' %}" width="77px" alt=""><img class="brand-light" src="{% static 'images/logo-light.png' %}" width="77px" alt="">
+							<!-- Or simple text-->
+							<!-- Core--></a></div>
+					<!-- Navigation-->
+					<div class="inner-navigation collapse">
+						<div class="inner-navigation-inline">
+							<div class="inner-nav">
+								<ul>
+									<!-- Home-->
+									<li><a href="{% url 'index' %}">Início</a></li>
+									<!-- Home end-->
+									<!-- Shop-->
+									<li class="menu-item-has-children"><a href="#">Cadastros</a>
+										<ul class="sub-menu">
+											<li><a href="{% url 'funcionarios' %}">Funcionários</a></li>
+											<li><a href="{% url 'revendedoras' %}">Revendedoras</a></li>
+										</ul>
+									</li>
+									<!-- Shop end-->
+									<!-- Simple-->
+									<li><a href="{% url 'produtos' %}">Encomendas</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="extra-nav">
+						<ul>
+							<li><a href="/esconde"><span>Login</span></a></li>
+						</ul>
+					</div>
+					<!-- Mobile menu-->
+					<div class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a></div>
+				</div>
+			</header>
+			<!-- Header end-->

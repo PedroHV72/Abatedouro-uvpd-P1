@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Abatedouro UVPD</title>
+		<!-- Favicons-->
+		<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
+		<!-- Web Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Hind:400,700%7cLora:400i%7cPoppins:500,600,700" rel="stylesheet">
+		<!-- Bootstrap core CSS-->
+		<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<!-- Plugins and Icon Fonts-->
+		<link href="{% static 'css/plugins.min.css' %}" rel="stylesheet">
+		<!-- Template core CSS-->
+		<link href="{% static 'css/template.css' %}" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Layout-->
+		<div class="layout">
+
+			{% include 'header.html' %}
+
+			{% block content %} {% endblock %}
+
+			{% include 'footer.html' %}
+
+		</div>
+		<!-- Layout end-->
+
+		<!-- Scripts-->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+		<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
+		<script src="{% static 'js/plugins.min.js' %}"></script>
+		<script src="{% static 'js/charts.js' %}"></script>
+		<script src="{% static 'js/custom.min.js' %}"></script>
+	</body>
+</html>
