@@ -1,0 +1,56 @@
+{% load static %}
+{% load bootstrap4 %}
+
+			<!-- Wrapper-->
+			<div class="wrapper">
+
+				<!-- Team-->
+				<section class="module module-divider-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 m-auto">
+								<div class="module-title text-center">
+									<h2>Gráfico dos pedidos</h2>
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+                            <canvas id="grafico-pedidos" height="160"></canvas>
+                        </div>
+					</div>
+				</section>
+				<!-- Team end-->
+			</div>
+
+{% bootstrap_javascript jquery='full' %}
+
+<script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+
+<script type="text/javascript">
+
+    $.get('{% url "dados-grafico-pedidos" %}', function(dados) {
+
+        var ctx = $("#grafico-pedidos").get(0).getContext("2d");
+        rotulos = dados['labels']
+        valores = dados['datasets'][0]['data']
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: rotulos,
+                datasets: [{
+                    data: valores,
+                    backgroundColor: [
+                        'rgba(153, 102, 255, 0.9)',
+                        'rgba(255, 206, 86, 0.9)',
+                        'rgba(255, 159, 64, 0.9)',
+                        'rgba(75, 192, 192, 0.9)',
+                        'rgba(255, 99, 132, 0.9)',
+                        'rgba(54, 162, 235, 0.9)',
+                    ]
+                }]
+            }
+        });
+    });
+
+</script>

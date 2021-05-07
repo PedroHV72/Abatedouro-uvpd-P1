@@ -1,5 +1,7 @@
+from django.db.models import Count
 from django.views.generic import TemplateView
 from django.views.generic import ListView
+from chartjs.views.lines import BaseLineChartView
 from .models import Funcionario, Revendedora, Galeria, Produto, Pedido
 
 
@@ -54,3 +56,22 @@ class ProdutoPedidoView(ListView):
     def get_queryset(self):
         id = self.kwargs['id']
         return Pedido.objects.filter(produto_id=id)
+
+
+class DadosGraficoPedidosView(BaseLineChartView):
+
+    def get_labels(self):
+        labels = []
+        queryset = Produto.objects.order_by('id')
+        for produto in queryset:
+            labels.append(produto.nome)
+        return labels
+
+    def get_data(self):
+        resultado = []
+        dados = []
+        queryset = Produto.objects.order_by('id').annotate(total=Count('pedido'))
+        for linha in queryset:
+            dados.append(int(linha.total))
+        resultado.append(dados)
+        return resultado
