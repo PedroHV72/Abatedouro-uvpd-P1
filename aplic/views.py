@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
-from .models import Funcionario, Revendedora, Galeria, Produto
+from django.views.generic import ListView
+from .models import Funcionario, Revendedora, Galeria, Produto, Pedido
 
 
 class IndexView(TemplateView):
@@ -36,3 +37,20 @@ class ProdutoView(TemplateView):
         context = super(ProdutoView, self).get_context_data(**kwargs)
         context['produtos'] = Produto.objects.order_by('?').all()
         return context
+
+
+class ProdutoPedidoView(ListView):
+    template_name = 'pedidos.html'
+    model = Pedido
+    paginate_by = 5
+    ordering = 'nome'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProdutoPedidoView, self).get_context_data(**kwargs)
+        id = self.kwargs['id']
+        context['produtos'] = Produto.objects.filter(id=id).first
+        return context
+
+    def get_queryset(self):
+        id = self.kwargs['id']
+        return Pedido.objects.filter(produto_id=id)

@@ -33,7 +33,7 @@
 									<div class="team-item m-b-30">
 										<div class="team-image"><img src="{{ p.foto.thumb.url }}" alt="">
 											<div class="team-content">
-												<h5>{{ p.nome }}</h5>
+												<h5><a href="{% url 'pedidos' id=p.id %}">{{ p.nome }}</a></h5>
 											</div>
 										</div>
 									</div>

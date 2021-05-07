@@ -200,7 +200,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-    color: #313131;
+    color: white;
 }
 
 h1 > a:hover,
@@ -1218,16 +1218,16 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 
 .page-item.active .page-link {
-    background-color: #fff;
+    background-color: #BDBDBD;
     border-color: transparent;
-    color: #4a90e2;
+    color: white;
 }
 
 .page-link:focus,
 .page-link:hover {
-    background-color: #fff;
+    background-color: #2E2E2E;
     border-color: transparent;
-    color: #4a90e2;
+    color: white;
 }
 
 .page-link {
