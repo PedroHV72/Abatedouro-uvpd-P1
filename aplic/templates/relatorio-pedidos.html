@@ -1,0 +1,42 @@
+{% load static %}
+
+			<!-- Wrapper-->
+			<div class="wrapper">
+
+				<!-- Team-->
+				<section class="module module-divider-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 m-auto">
+								<div class="module-title text-center">
+									<h2>Relatório de pedidos</h2>
+								</div>
+							</div>
+						</div>
+
+                        <table class="table">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Data do Pedido</th>
+                                    <th scope="col">Quantidade do pedido</th>
+                                    <th scope="col">Valor do pedido</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for p in pedidos %}
+                                    <tr>
+                                        <th scope="row">{{ p.data }}</th>
+                                        <th scope="row">{{ p.quantidade_produto }}</th>
+                                        <th scope="row">{{ p.valor_total_pedido }}</th>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+
+                        </table>
+
+					</div>
+				</section>
+				<!-- Team end-->
+			</div>

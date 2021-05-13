@@ -2,6 +2,11 @@ from django.db.models import Count
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 from chartjs.views.lines import BaseLineChartView
+from django.core.files.storage import FileSystemStorage
+from django.template.loader import render_to_string
+from django.http import HttpResponse
+from django_weasyprint import WeasyTemplateView
+from weasyprint import HTML
 from .models import Funcionario, Revendedora, Galeria, Produto, Pedido
 
 
@@ -75,3 +80,20 @@ class DadosGraficoPedidosView(BaseLineChartView):
             dados.append(int(linha.total))
         resultado.append(dados)
         return resultado
+
+
+class RelatorioPedidosView(WeasyTemplateView):
+
+    def get(self, request, *args, **kwargs):
+        pedidos = Pedido.objects.order_by('id')
+
+        html_string = render_to_string('relatorio-pedidos.html', {'pedidos': pedidos})
+
+        html = HTML(string=html_string, base_url=request.build_absolute_uri())
+        html.write_pdf(target='/tmp/relatorio-pedidos.pdf')
+        fs = FileSystemStorage('/tmp')
+
+        with fs.open('relatorio-pedidos.pdf') as pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            response['Content-Disposition'] = 'inline; filename="relatorio-pedidos.pdf"'
+        return response
