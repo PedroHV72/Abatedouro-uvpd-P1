@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 20:38-0300\n"
+"POT-Creation-Date: 2021-05-21 18:54-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,690 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: .\aplic\models.py:14
+msgid "Logradouro"
+msgstr ""
+
+#: .\aplic\models.py:15
+msgid "Cidade"
+msgstr ""
+
+#: .\aplic\models.py:16
+msgid "Bairro"
+msgstr ""
+
+#: .\aplic\models.py:17
+msgid "Estado"
+msgstr ""
+
+#: .\aplic\models.py:18
+msgid "Complemento"
+msgstr ""
+
+#: .\aplic\models.py:19
+msgid "Número"
+msgstr ""
+
+#: .\aplic\models.py:20
+msgid "CEP"
+msgstr ""
+
+#: .\aplic\models.py:23 .\aplic\templates\footer.html:26
+msgid "Endereço"
+msgstr ""
+
+#: .\aplic\models.py:24
+msgid "Endereços"
+msgstr ""
+
+#: .\aplic\models.py:31 .\aplic\models.py:85
+msgid "Nome"
+msgstr ""
+
+#: .\aplic\models.py:32
+msgid "CPF"
+msgstr ""
+
+#: .\aplic\models.py:33
+msgid "Número celular"
+msgstr ""
+
+#: .\aplic\models.py:35 .\aplic\models.py:87 .\aplic\models.py:102
+#: .\aplic\models.py:168
+msgid "Foto"
+msgstr ""
+
+#: .\aplic\models.py:36
+msgid "Data de Nascimento"
+msgstr ""
+
+#: .\aplic\models.py:37 .\aplic\models.py:88
+msgid "Facebook"
+msgstr ""
+
+#: .\aplic\models.py:38 .\aplic\models.py:89
+msgid "Twitter"
+msgstr ""
+
+#: .\aplic\models.py:39 .\aplic\models.py:90
+msgid "Instagram"
+msgstr ""
+
+#: .\aplic\models.py:42
+msgid "Funcionário"
+msgstr ""
+
+#: .\aplic\models.py:43 .\aplic\templates\funcionarios.html:14
+#: .\aplic\templates\header.html:21
+msgid "Funcionários"
+msgstr ""
+
+#: .\aplic\models.py:50
+msgid "CNH"
+msgstr ""
+
+#: .\aplic\models.py:51 .\aplic\models.py:62 .\aplic\models.py:73
+msgid "Salário"
+msgstr ""
+
+#: .\aplic\models.py:54
+msgid "Motorista"
+msgstr ""
+
+#: .\aplic\models.py:55
+msgid "Motoristas"
+msgstr ""
+
+#: .\aplic\models.py:65
+msgid "Gerente"
+msgstr ""
+
+#: .\aplic\models.py:66
+msgid "Gerentes"
+msgstr ""
+
+#: .\aplic\models.py:76
+msgid "Estoquista"
+msgstr ""
+
+#: .\aplic\models.py:77
+msgid "Estoquistas"
+msgstr ""
+
+#: .\aplic\models.py:84
+msgid "CNPJ"
+msgstr ""
+
+#: .\aplic\models.py:93
+msgid "Revendedora"
+msgstr ""
+
+#: .\aplic\models.py:94 .\aplic\templates\header.html:22
+#: .\aplic\templates\revendedoras.html:14
+msgid "Revendedoras"
+msgstr ""
+
+#: .\aplic\models.py:101
+msgid "Nome do produto"
+msgstr ""
+
+#: .\aplic\models.py:103
+msgid "Disponibilidade"
+msgstr ""
+
+#: .\aplic\models.py:106
+msgid "Produto"
+msgstr ""
+
+#: .\aplic\models.py:107 .\aplic\templates\encomendas.html:14
+msgid "Produtos"
+msgstr ""
+
+#: .\aplic\models.py:115
+msgid "Aceito"
+msgstr ""
+
+#: .\aplic\models.py:116
+msgid "Recusado"
+msgstr ""
+
+#: .\aplic\models.py:120
+msgid "Quantidade do produto"
+msgstr ""
+
+#: .\aplic\models.py:121
+msgid "Data"
+msgstr ""
+
+#: .\aplic\models.py:122
+msgid "Status"
+msgstr ""
+
+#: .\aplic\models.py:123
+msgid "Valor total do pedido"
+msgstr ""
+
+#: .\aplic\models.py:126
+msgid "Pedido"
+msgstr ""
+
+#: .\aplic\models.py:127
+msgid "Pedidos"
+msgstr ""
+
+#: .\aplic\models.py:141
+msgid "Valor total da venda"
+msgstr ""
+
+#: .\aplic\models.py:144
+msgid "Venda"
+msgstr ""
+
+#: .\aplic\models.py:145
+msgid "Vendas"
+msgstr ""
+
+#: .\aplic\models.py:152
+msgid "Data da Entrega"
+msgstr ""
+
+#: .\aplic\models.py:153
+msgid "Melhor horário para entrega"
+msgstr ""
+
+#: .\aplic\models.py:154
+msgid "Valor frete"
+msgstr ""
+
+#: .\aplic\models.py:159
+msgid "Entrega"
+msgstr ""
+
+#: .\aplic\models.py:160
+msgid "Entregas"
+msgstr ""
+
+#: .\aplic\models.py:167
+msgid "Nome da foto"
+msgstr ""
+
+#: .\aplic\models.py:171
+msgid "Foto da Galeria"
+msgstr ""
+
+#: .\aplic\models.py:172
+msgid "Fotos da Galeria"
+msgstr ""
+
+#: .\aplic\templates\contato.html:14 .\aplic\templates\header.html:29
+msgid "Contato"
+msgstr ""
+
+#: .\aplic\templates\contato.html:33
+msgid "Envie uma mensagem ou uma dúvida"
+msgstr ""
+
+#: .\aplic\templates\encomendas.html:27
+msgid "Conheça nossos produtos"
+msgstr ""
+
+#: .\aplic\templates\footer.html:15
+msgid "Telefone"
+msgstr ""
+
+#: .\aplic\templates\footer.html:47
+msgid "Todos os direitos reservados"
+msgstr ""
+
+#: .\aplic\templates\funcionarios.html:27
+msgid "Conheça a nossa equipe"
+msgstr ""
+
+#: .\aplic\templates\galeria.html:8
+msgid "Galeria de Fotos"
+msgstr ""
+
+#: .\aplic\templates\galeria.html:9
+msgid "Conheça um pouco da nossa estrutura"
+msgstr ""
+
+#: .\aplic\templates\grafico.html:14
+msgid "Gráfico dos pedidos"
+msgstr ""
+
+#: .\aplic\templates\header.html:16
+msgid "Início"
+msgstr ""
+
+#: .\aplic\templates\header.html:19
+msgid "Cadastros"
+msgstr ""
+
+#: .\aplic\templates\header.html:27
+msgid "Encomendas"
+msgstr ""
+
+#: .\aplic\templates\header.html:28
+msgid "Relatório Pedidos"
+msgstr ""
+
+#: .\aplic\templates\historia.html:8
+msgid "História"
+msgstr ""
+
+#: .\aplic\templates\historia.html:9
+msgid "Conheça um pouco de nossa história"
+msgstr ""
+
+#: .\aplic\templates\historia.html:25
+msgid "Criação"
+msgstr ""
+
+#: .\aplic\templates\historia.html:26
+msgid ""
+"Nossa empresa foi criada com o propósito de atender na região Sul Fluminense "
+"do Rio de Janeiro."
+msgstr ""
+
+#: .\aplic\templates\historia.html:35
+msgid "Localização"
+msgstr ""
+
+#: .\aplic\templates\historia.html:36
+msgid ""
+"Nosso abatedouro está localizado na região entre as cidades Valença e "
+"Vassouras."
+msgstr ""
+
+#: .\aplic\templates\historia.html:45
+msgid "Produção"
+msgstr ""
+
+#: .\aplic\templates\historia.html:46
+msgid ""
+"Os produtos tratados em nosso abatedouro são de primeira qualidade, e também "
+"com o suporte para abranger e atender toda a região."
+msgstr ""
+
+#: .\aplic\templates\pedidos.html:27
+msgid "Pedidos do produto"
+msgstr ""
+
+#: .\aplic\templates\pedidos.html:36
+#: .\aplic\templates\relatorio-pedidos.html:27
+msgid "Data do Pedido"
+msgstr ""
+
+#: .\aplic\templates\pedidos.html:37
+#: .\aplic\templates\relatorio-pedidos.html:28
+msgid "Quantidade do pedido"
+msgstr ""
+
+#: .\aplic\templates\pedidos.html:38
+#: .\aplic\templates\relatorio-pedidos.html:29
+msgid "Valor do pedido"
+msgstr ""
+
+#: .\aplic\templates\redes-sociais.html:12
+msgid "Siga nosso Instagram"
+msgstr ""
+
+#: .\aplic\templates\redes-sociais.html:21
+msgid "Siga nossa página no Facebook"
+msgstr ""
+
+#: .\aplic\templates\redes-sociais.html:30
+msgid "Siga nosso Twitter"
+msgstr ""
+
+#: .\aplic\templates\redes-sociais.html:39
+msgid "Se inscreva em nosso canal"
+msgstr ""
+
+#: .\aplic\templates\relatorio-pedidos.html:18
+msgid "Relatório de pedidos"
+msgstr ""
+
+#: .\aplic\templates\revendedoras.html:27
+msgid "Conheça todas as nossas parcerias"
+msgstr ""
+
+#: .\aplic\templates\slider-index.html:8
+msgid "Bem vindo ao Abatedouro UVPD"
+msgstr ""
+
+#: .\aplic\templates\slider-index.html:9
+msgid "Qualidade | Comprometimento | Confiabilidade"
+msgstr ""
+
+#: .\aplic\templates\slider-index.html:10
+msgid ""
+"Nova empresa que chegou para abastecer e atender todas as cidades do "
+"interior do Rio de Janeiro."
+msgstr ""
+
+#: .\aplic\views.py:124
+msgid "E-mail enviado com sucesso"
+msgstr ""
+
+#: .\aplic\views.py:128
+msgid "Falha ao enviar e-mail"
+msgstr ""
+
 #: .\venv\Lib\site-packages\bootstrap4\components.py:17
 #: .\venv\Lib\site-packages\bootstrap4\templates\bootstrap4\form_errors.html:3
 #: .\venv\Lib\site-packages\bootstrap4\templates\bootstrap4\messages.html:4
 msgid "close"
 msgstr ""
+
+#: .\venv\Lib\site-packages\click\_termui_impl.py:495
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_termui_impl.py:499
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_unicodefun.py:20
+msgid ""
+"Click will abort further execution because Python was configured to use "
+"ASCII as encoding for the environment. Consult https://click.palletsprojects."
+"com/unicode-support/ for mitigation steps."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_unicodefun.py:56
+msgid ""
+"Additional information: on this system no suitable UTF-8 locales were "
+"discovered. This most likely requires resolving by reconfiguring the locale "
+"system."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_unicodefun.py:65
+msgid ""
+"This system supports the C.UTF-8 locale which is recommended. You might be "
+"able to resolve your issue by exporting the following environment variables:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_unicodefun.py:75
+#, python-brace-format
+msgid ""
+"This system lists some UTF-8 supporting locales that you can pick from. The "
+"following suitable locales were discovered: {locales}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\_unicodefun.py:93
+msgid ""
+"Click discovered that you exported a UTF-8 locale but the locale system "
+"could not pick up from it because it does not exist. The exported locale is "
+"{locale!r} but it is not supported."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1104
+msgid "Aborted!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1288
+#: .\venv\Lib\site-packages\click\decorators.py:435
+msgid "Show this message and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1317
+#: .\venv\Lib\site-packages\click\core.py:1343
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1360
+msgid "Options"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1384
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\core.py:1399
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1616
+msgid "Commands"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1648
+msgid "Missing command."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:1726
+msgid "No such command {name!r}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2274
+msgid "Value must be an iterable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2294
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\core.py:2718
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2741
+msgid "(dynamic)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2751
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\core.py:2760
+msgid "required"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\decorators.py:339
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\decorators.py:404
+msgid "Show the version and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:43
+#: .\venv\Lib\site-packages\click\exceptions.py:79
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:71
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:120
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:122
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:178
+msgid "Missing argument"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:180
+msgid "Missing option"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:182
+msgid "Missing parameter"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:184
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:191
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:211
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:223
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:261
+msgid "unknown error"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\exceptions.py:268
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\shell_completion.py:314
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\shell_completion.py:320
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:161
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:178
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:180
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:191
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:245
+msgid "Error: invalid input"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\termui.py:796
+msgid "Press any key to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:258
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:290
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\types.py:380
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\click\types.py:402
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:458
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:599
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:623
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:801
+msgid "file"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:803
+msgid "directory"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:805
+msgid "path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:851
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:860
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:868
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:876
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:884
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: .\venv\Lib\site-packages\click\types.py:951
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
