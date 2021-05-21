@@ -20,373 +20,381 @@ msgstr ""
 
 #: .\aplic\models.py:14
 msgid "Logradouro"
-msgstr ""
+msgstr "patio"
 
 #: .\aplic\models.py:15
 msgid "Cidade"
-msgstr ""
+msgstr "City"
 
 #: .\aplic\models.py:16
 msgid "Bairro"
-msgstr ""
+msgstr "Neighborhood"
 
 #: .\aplic\models.py:17
 msgid "Estado"
-msgstr ""
+msgstr "State"
 
 #: .\aplic\models.py:18
 msgid "Complemento"
-msgstr ""
+msgstr "Complement"
 
 #: .\aplic\models.py:19
 msgid "Número"
-msgstr ""
+msgstr "Number"
 
 #: .\aplic\models.py:20
 msgid "CEP"
-msgstr ""
+msgstr "Zipcode"
 
 #: .\aplic\models.py:23 .\aplic\templates\footer.html:26
 msgid "Endereço"
-msgstr ""
+msgstr "Address"
 
 #: .\aplic\models.py:24
 msgid "Endereços"
-msgstr ""
+msgstr "Address"
 
 #: .\aplic\models.py:31 .\aplic\models.py:85
 msgid "Nome"
-msgstr ""
+msgstr "Name"
 
 #: .\aplic\models.py:32
 msgid "CPF"
-msgstr ""
+msgstr "CPF"
 
 #: .\aplic\models.py:33
 msgid "Número celular"
-msgstr ""
+msgstr "Mobile number"
 
 #: .\aplic\models.py:35 .\aplic\models.py:87 .\aplic\models.py:102
 #: .\aplic\models.py:168
 msgid "Foto"
-msgstr ""
+msgstr "Photo"
 
 #: .\aplic\models.py:36
 msgid "Data de Nascimento"
-msgstr ""
+msgstr "Birth Date"
 
 #: .\aplic\models.py:37 .\aplic\models.py:88
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: .\aplic\models.py:38 .\aplic\models.py:89
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: .\aplic\models.py:39 .\aplic\models.py:90
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: .\aplic\models.py:42
 msgid "Funcionário"
-msgstr ""
+msgstr "functionary"
 
 #: .\aplic\models.py:43 .\aplic\templates\funcionarios.html:14
 #: .\aplic\templates\header.html:21
 msgid "Funcionários"
-msgstr ""
+msgstr "Employees"
 
 #: .\aplic\models.py:50
 msgid "CNH"
-msgstr ""
+msgstr "CNH"
 
 #: .\aplic\models.py:51 .\aplic\models.py:62 .\aplic\models.py:73
 msgid "Salário"
-msgstr ""
+msgstr "Salary"
 
 #: .\aplic\models.py:54
 msgid "Motorista"
-msgstr ""
+msgstr "driver"
 
 #: .\aplic\models.py:55
 msgid "Motoristas"
-msgstr ""
+msgstr "Drivers"
 
 #: .\aplic\models.py:65
 msgid "Gerente"
-msgstr ""
+msgstr "manager"
 
 #: .\aplic\models.py:66
 msgid "Gerentes"
-msgstr ""
+msgstr "Managers"
 
 #: .\aplic\models.py:76
 msgid "Estoquista"
-msgstr ""
+msgstr "Stockist"
 
 #: .\aplic\models.py:77
 msgid "Estoquistas"
-msgstr ""
+msgstr "Stockists"
 
 #: .\aplic\models.py:84
 msgid "CNPJ"
-msgstr ""
+msgstr "CNPJ"
 
 #: .\aplic\models.py:93
 msgid "Revendedora"
-msgstr ""
+msgstr "Dealership"
 
 #: .\aplic\models.py:94 .\aplic\templates\header.html:22
 #: .\aplic\templates\revendedoras.html:14
 msgid "Revendedoras"
-msgstr ""
+msgstr "Dealerships"
 
 #: .\aplic\models.py:101
 msgid "Nome do produto"
-msgstr ""
+msgstr "Product name"
 
 #: .\aplic\models.py:103
 msgid "Disponibilidade"
-msgstr ""
+msgstr "Availability"
 
 #: .\aplic\models.py:106
 msgid "Produto"
-msgstr ""
+msgstr "Product"
 
 #: .\aplic\models.py:107 .\aplic\templates\encomendas.html:14
 msgid "Produtos"
-msgstr ""
+msgstr "Products"
 
 #: .\aplic\models.py:115
 msgid "Aceito"
-msgstr ""
+msgstr "I accept"
 
 #: .\aplic\models.py:116
 msgid "Recusado"
-msgstr ""
+msgstr "Refused"
 
 #: .\aplic\models.py:120
 msgid "Quantidade do produto"
-msgstr ""
+msgstr "Product quantity"
 
 #: .\aplic\models.py:121
 msgid "Data"
-msgstr ""
+msgstr "Date"
 
 #: .\aplic\models.py:122
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: .\aplic\models.py:123
 msgid "Valor total do pedido"
-msgstr ""
+msgstr "Total order amount"
 
 #: .\aplic\models.py:126
 msgid "Pedido"
-msgstr ""
+msgstr "Request"
 
 #: .\aplic\models.py:127
 msgid "Pedidos"
-msgstr ""
+msgstr "Requests"
 
 #: .\aplic\models.py:141
 msgid "Valor total da venda"
-msgstr ""
+msgstr "Total sale amount"
 
 #: .\aplic\models.py:144
 msgid "Venda"
-msgstr ""
+msgstr "sale"
 
 #: .\aplic\models.py:145
 msgid "Vendas"
-msgstr ""
+msgstr "Sales"
 
 #: .\aplic\models.py:152
 msgid "Data da Entrega"
-msgstr ""
+msgstr "Date of Delivery"
 
 #: .\aplic\models.py:153
 msgid "Melhor horário para entrega"
-msgstr ""
+msgstr "Best time for delivery"
 
 #: .\aplic\models.py:154
 msgid "Valor frete"
-msgstr ""
+msgstr "Freight value"
 
 #: .\aplic\models.py:159
 msgid "Entrega"
-msgstr ""
+msgstr "Shipping"
 
 #: .\aplic\models.py:160
 msgid "Entregas"
-msgstr ""
+msgstr "Deliveries"
 
 #: .\aplic\models.py:167
 msgid "Nome da foto"
-msgstr ""
+msgstr "Name of the photo"
 
 #: .\aplic\models.py:171
 msgid "Foto da Galeria"
-msgstr ""
+msgstr "Photo from gallery"
 
 #: .\aplic\models.py:172
 msgid "Fotos da Galeria"
-msgstr ""
+msgstr "Gallery Photos"
 
 #: .\aplic\templates\contato.html:14 .\aplic\templates\header.html:29
 msgid "Contato"
-msgstr ""
+msgstr "Contact"
 
 #: .\aplic\templates\contato.html:33
 msgid "Envie uma mensagem ou uma dúvida"
-msgstr ""
+msgstr "Send a message or question"
 
 #: .\aplic\templates\encomendas.html:27
 msgid "Conheça nossos produtos"
-msgstr ""
+msgstr "Get to know our products"
 
 #: .\aplic\templates\footer.html:15
 msgid "Telefone"
-msgstr ""
+msgstr "Phone"
 
 #: .\aplic\templates\footer.html:47
 msgid "Todos os direitos reservados"
-msgstr ""
+msgstr "All rights reserved"
 
 #: .\aplic\templates\funcionarios.html:27
 msgid "Conheça a nossa equipe"
-msgstr ""
+msgstr "Meet our team"
 
 #: .\aplic\templates\galeria.html:8
 msgid "Galeria de Fotos"
-msgstr ""
+msgstr "Photo Gallery"
 
 #: .\aplic\templates\galeria.html:9
 msgid "Conheça um pouco da nossa estrutura"
-msgstr ""
+msgstr "Get to know a little of our structure"
 
 #: .\aplic\templates\grafico.html:14
 msgid "Gráfico dos pedidos"
-msgstr ""
+msgstr "Order graph"
 
 #: .\aplic\templates\header.html:16
 msgid "Início"
-msgstr ""
+msgstr "Start"
 
 #: .\aplic\templates\header.html:19
 msgid "Cadastros"
-msgstr ""
+msgstr "Registrations"
 
 #: .\aplic\templates\header.html:27
 msgid "Encomendas"
-msgstr ""
+msgstr "Orders"
 
 #: .\aplic\templates\header.html:28
 msgid "Relatório Pedidos"
-msgstr ""
+msgstr "Orders Report"
 
 #: .\aplic\templates\historia.html:8
 msgid "História"
-msgstr ""
+msgstr "History"
 
 #: .\aplic\templates\historia.html:9
 msgid "Conheça um pouco de nossa história"
-msgstr ""
+msgstr "Get to know a bit of our history"
 
 #: .\aplic\templates\historia.html:25
 msgid "Criação"
-msgstr ""
+msgstr "Creation"
 
 #: .\aplic\templates\historia.html:26
 msgid ""
 "Nossa empresa foi criada com o propósito de atender na região Sul Fluminense "
 "do Rio de Janeiro."
 msgstr ""
+"Our company was created with the purpose of serving in the South Fluminense "
+"region of Rio de Janeiro."
 
 #: .\aplic\templates\historia.html:35
 msgid "Localização"
-msgstr ""
+msgstr "Location"
 
 #: .\aplic\templates\historia.html:36
 msgid ""
 "Nosso abatedouro está localizado na região entre as cidades Valença e "
 "Vassouras."
 msgstr ""
+"Our slaughterhouse is located in the region between the cities Valença and "
+"Vassouras."
 
 #: .\aplic\templates\historia.html:45
 msgid "Produção"
-msgstr ""
+msgstr "production"
 
 #: .\aplic\templates\historia.html:46
 msgid ""
 "Os produtos tratados em nosso abatedouro são de primeira qualidade, e também "
 "com o suporte para abranger e atender toda a região."
 msgstr ""
+"The products treated in our slaughterhouse are of first quality, and also "
+"with the support to cover and serve the entire region."
 
 #: .\aplic\templates\pedidos.html:27
 msgid "Pedidos do produto"
-msgstr ""
+msgstr "Product orders"
 
 #: .\aplic\templates\pedidos.html:36
 #: .\aplic\templates\relatorio-pedidos.html:27
 msgid "Data do Pedido"
-msgstr ""
+msgstr "Order Date"
 
 #: .\aplic\templates\pedidos.html:37
 #: .\aplic\templates\relatorio-pedidos.html:28
 msgid "Quantidade do pedido"
-msgstr ""
+msgstr "Order quantity"
 
 #: .\aplic\templates\pedidos.html:38
 #: .\aplic\templates\relatorio-pedidos.html:29
 msgid "Valor do pedido"
-msgstr ""
+msgstr "Order value"
 
 #: .\aplic\templates\redes-sociais.html:12
 msgid "Siga nosso Instagram"
-msgstr ""
+msgstr "Follow our Instagram"
 
 #: .\aplic\templates\redes-sociais.html:21
 msgid "Siga nossa página no Facebook"
-msgstr ""
+msgstr "Follow our Facebook page"
 
 #: .\aplic\templates\redes-sociais.html:30
 msgid "Siga nosso Twitter"
-msgstr ""
+msgstr "Follow our Twitter"
 
 #: .\aplic\templates\redes-sociais.html:39
 msgid "Se inscreva em nosso canal"
-msgstr ""
+msgstr "Subscribe to our channel"
 
 #: .\aplic\templates\relatorio-pedidos.html:18
 msgid "Relatório de pedidos"
-msgstr ""
+msgstr "Order report"
 
 #: .\aplic\templates\revendedoras.html:27
 msgid "Conheça todas as nossas parcerias"
-msgstr ""
+msgstr "Get to know all our partnerships"
 
 #: .\aplic\templates\slider-index.html:8
 msgid "Bem vindo ao Abatedouro UVPD"
-msgstr ""
+msgstr "Welcome to uvpd slaughterhouse"
 
 #: .\aplic\templates\slider-index.html:9
 msgid "Qualidade | Comprometimento | Confiabilidade"
-msgstr ""
+msgstr "Quality | Commitment | reliability"
 
 #: .\aplic\templates\slider-index.html:10
 msgid ""
 "Nova empresa que chegou para abastecer e atender todas as cidades do "
 "interior do Rio de Janeiro."
 msgstr ""
+"New company that arrived to supply and serve all cities in the interior of "
+"Rio de Janeiro."
 
 #: .\aplic\views.py:124
 msgid "E-mail enviado com sucesso"
-msgstr ""
+msgstr "E-mail successfully sent"
 
 #: .\aplic\views.py:128
 msgid "Falha ao enviar e-mail"
-msgstr ""
+msgstr "Failed to send email"
 
 #: .\venv\Lib\site-packages\bootstrap4\components.py:17
 #: .\venv\Lib\site-packages\bootstrap4\templates\bootstrap4\form_errors.html:3
