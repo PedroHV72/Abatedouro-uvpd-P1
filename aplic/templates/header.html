@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!-- Header-->
 			<header class="header header-center undefined">
 				<div class="container-fluid">
@@ -12,19 +13,20 @@
 							<div class="inner-nav">
 								<ul>
 									<!-- Home-->
-									<li><a href="{% url 'index' %}">Início</a></li>
+									<li><a href="{% url 'index' %}">{% trans 'Início' %}</a></li>
 									<!-- Home end-->
 									<!-- Shop-->
-									<li class="menu-item-has-children"><a href="#">Cadastros</a>
+									<li class="menu-item-has-children"><a href="#">{% trans 'Cadastros' %}</a>
 										<ul class="sub-menu">
-											<li><a href="{% url 'funcionarios' %}">Funcionários</a></li>
-											<li><a href="{% url 'revendedoras' %}">Revendedoras</a></li>
+											<li><a href="{% url 'funcionarios' %}">{% trans 'Funcionários' %}</a></li>
+											<li><a href="{% url 'revendedoras' %}">{% trans 'Revendedoras' %}</a></li>
 										</ul>
 									</li>
 									<!-- Shop end-->
 									<!-- Simple-->
-									<li><a href="{% url 'produtos' %}">Encomendas</a></li>
-									<li><a href="{% url 'relatorio-pedidos' %}">Relatório Pedidos</a></li>
+									<li><a href="{% url 'produtos' %}">{% trans 'Encomendas' %}</a></li>
+									<li><a href="{% url 'relatorio-pedidos' %}">{% trans 'Relatório Pedidos' %}</a></li>
+									<li><a href="{% url 'contato' %}">{% trans 'Contato' %}</a></li>
 								</ul>
 							</div>
 						</div>

@@ -1,12 +1,13 @@
 {% load static %}
+{% load i18n %}
 <!-- Page Header-->
     <section class="module-header full-height parallax bg-dark bg-dark-60" data-background="{% static 'images/slider_primario.jpg' %}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="h2 m-b-20">Bem vindo ao Abatedouro UVPD</h1>
-                    <h1 class="h3 m-b-20"><span class="rotate">Qualidade | Comprometimento | Confiabilidade</span></h1>
-                    <p class="m-b-40">Nova empresa que chegou para abastecer e atender todas as cidades do interior do Rio de Janeiro.</p>
+                    <h1 class="h2 m-b-20">{% trans 'Bem vindo ao Abatedouro UVPD' %}</h1>
+                    <h1 class="h3 m-b-20"><span class="rotate">{% trans 'Qualidade | Comprometimento | Confiabilidade' %}</span></h1>
+                    <p class="m-b-40">{% trans 'Nova empresa que chegou para abastecer e atender todas as cidades do interior do Rio de Janeiro.' %}</p>
                 </div>
             </div>
         </div>

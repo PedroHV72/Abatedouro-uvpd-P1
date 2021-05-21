@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!-- Bootstrap core CSS-->
 		<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 		<!-- Plugins and Icon Fonts-->
@@ -14,7 +15,7 @@
 						<div class="row">
 							<div class="col-md-8 m-auto">
 								<div class="module-title text-center">
-									<h2>Relatório de pedidos</h2>
+									<h2>{% trans 'Relatório de pedidos' %}</h2>
 								</div>
 							</div>
 						</div>
@@ -23,9 +24,9 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">Data do Pedido</th>
-                                    <th scope="col">Quantidade do pedido</th>
-                                    <th scope="col">Valor do pedido</th>
+                                    <th scope="col">{% trans 'Data do Pedido' %}</th>
+                                    <th scope="col">{% trans 'Quantidade do pedido' %}</th>
+                                    <th scope="col">{% trans 'Valor do pedido' %}</th>
                                 </tr>
                             </thead>
 

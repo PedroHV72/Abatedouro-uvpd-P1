@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+			<!-- Wrapper-->
+			<div class="wrapper">
+
+				<!-- Page Header-->
+				<section class="module-header parallax bg-dark bg-dark-60" data-background="{% static 'images/slider_primario.jpg' %}">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1 class="h1 m-b-10">{% trans 'Contato' %}</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Page Header end-->
+				<br><br><br><br><br><br><br><br><br>
+				<!-- Map-->
+				<section class="maps-container">
+              		<object style="border:0; height: 280px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.5249157121534!2d-43.666211285421!3d-22.409260585267063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9930cf7c22de05%3A0xc63f64f24c89cbf6!2sUniversidade%20de%20Vassouras!5e0!3m2!1spt-BR!2sbr!4v1621021121681!5m2!1spt-BR!2sbr"></object>
+				</section>
+				<!-- Map end-->
+
+				<!-- Contact-->
+				<section class="module">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 m-auto">
+								<div class="module-title text-center">
+									<h2>{% trans 'Envie uma mensagem ou uma dúvida' %}</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="container">
+								{% if messages %}
+									{% for m in messages %}
+										<div class="alert alert-{{ m.extra_tags }}">
+											<button type="button" class="close" data-dismiss="alert"></button>
+											<strong>{{ m }}</strong>
+										</div>
+									{% endfor %}
+								{% endif %}
+							</div>
+							<div class="col-md-8 m-auto">
+								<form id="contact-form" method="post" novalidate action="{% url 'contato' %}">
+									{% csrf_token %}
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<input class="form-control" id="nome" type="text" name="name" placeholder="Nome" required="">
+												<p class="help-block text-danger"></p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<input class="form-control" id="email" type="email" name="email" placeholder="E-mail" required="">
+												<p class="help-block text-danger"></p>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<input class="form-control" id="assunto" type="text" name="subject" placeholder="Assunto" required="">
+												<p class="help-block text-danger"></p>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<textarea class="form-control" id="mensagem" name="message" placeholder="Mensagem" rows="12" required=""></textarea>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="text-center">
+												<input class="btn btn-round btn-brand" type="submit" value="Enviar">
+											</div>
+										</div>
+									</div>
+								</form>
+								<!-- Ajax response-->
+								<div class="ajax-response text-center" id="contact-response"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Contact end-->
+			</div>
+
+{% endblock %}
