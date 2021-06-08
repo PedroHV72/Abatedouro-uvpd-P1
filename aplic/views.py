@@ -17,6 +17,15 @@ from .forms import ContatoForm
 
 from django.contrib import messages
 
+from rest_framework import permissions
+
+from .import serializers
+
+from aplic.serializers import FuncionarioSerializer, RevendedoraSerializer, GaleriaSerializer, ProdutoSerializer, \
+    PedidoSerializer
+
+from rest_framework import viewsets
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -127,3 +136,30 @@ class ContatoView(FormView):
     def form_invalid(self, form, *args, **kwargs):
         messages.error(self.request, _('Falha ao enviar e-mail'), extra_tags='danger')
         return super(ContatoView, self).form_invalid(form, *args, **kwargs)
+
+
+class FuncionarioViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.DjangoModelPermissions, )
+
+    queryset = Funcionario.objects.all()
+    serializer_class = FuncionarioSerializer
+
+
+class RevendedoraViewSet(viewsets.ModelViewSet):
+    queryset = Revendedora.objects.all()
+    serializer_class = RevendedoraSerializer
+
+
+class GaleriaViewSet(viewsets.ModelViewSet):
+    queryset = Galeria.objects.all()
+    serializer_class = GaleriaSerializer
+
+
+class ProdutoViewSet(viewsets.ModelViewSet):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+
+
+class PedidoViewSet(viewsets.ModelViewSet):
+    queryset = Pedido.objects.all()
+    serializer_class = PedidoSerializer

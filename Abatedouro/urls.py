@@ -19,7 +19,9 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from aplic.urls import router
+
 urlpatterns = [
     path('esconde/', admin.site.urls),
-    path('', include('aplic.urls')),
+    path('', include('aplic.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
